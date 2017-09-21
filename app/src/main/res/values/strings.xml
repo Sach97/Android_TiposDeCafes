@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TiposDeCafes</string>
+    <string name="title_new_activity">Pagina para comprar tipos de cafes</string>
 </resources>
