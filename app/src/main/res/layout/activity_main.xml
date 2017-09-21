@@ -9,7 +9,7 @@
         android:id="@+id/textView1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" 
-        android:background="#ff993300"
+        android:background="#F44336"
         android:text="Tipo de Cafe?"
         android:textColor="#ffffff"
         android:textStyle="bold"/>
@@ -41,6 +41,53 @@
         
     </RadioGroup>
 
-    
-    
+    <TextView
+        android:id="@+id/labelCoffee"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#F44336"
+        android:text="Extras ?"
+        android:textColor="#ffffff"
+        android:textStyle="bold"/>
+
+    <CheckBox
+        android:id="@+id/checkCrema"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crema de Leche"
+        android:textStyle="bold">
+    </CheckBox>
+
+    <CheckBox
+        android:id="@+id/checkAzucar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crema de Azucar"
+        android:textStyle="bold">
+    </CheckBox>
+
+    <LinearLayout
+        android:id="@+id/Buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/buttonPagar"
+            android:layout_width="160px"
+            android:layout_height="wrap_content"
+            android:onClick="pagar"
+            android:text="Pagar"
+            android:textStyle="bold"
+            android:background="#FFEBEE">
+        </Button>
+
+        <Button
+            android:id="@+id/buttonBuscar"
+            android:layout_width="160px"
+            android:layout_height="wrap_content"
+            android:text="Buscar"
+            android:textStyle="bold"
+            android:background="#FFEBEE">
+        </Button>
+    </LinearLayout>
 </LinearLayout>
