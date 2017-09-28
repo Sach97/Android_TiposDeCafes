@@ -1,18 +1,24 @@
 package com.example.sacha.tiposdecafes;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.StrictMode;
 import android.support.v4.app.ShareCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    //static final int ACCEPTED = 0;
+    //Que es MESSAGE? Donde viene ?
+    public static final int REQUEST_CODE = 1;
     public final static String EXTRA_MESSAGE = "com.example.sacha.tiposdecafes.MESSAGE";
 
     private CheckBox checkCrema;
@@ -37,12 +43,14 @@ public class MainActivity extends AppCompatActivity {
 
         if(checkAzucar.isChecked()){
             cadena +=" con azucar";
+        }else{
+            cadena += "";
         }
 
         if(checkCrema.isChecked()){
             cadena +=" y crema de leche";
         }else{
-            cadena += " con crema de leche";
+            cadena += "";
         }
         return cadena;
     }//textToCafe
@@ -71,10 +79,25 @@ public class MainActivity extends AppCompatActivity {
 
     }//onCreate
 
+    //Mene à newActivity après avoir appuyé sur le bouton pagar
     public void pagar(View view){
         Intent intent = new Intent(this,NewActivity.class);
         intent.putExtra(EXTRA_MESSAGE,textToCafe());
-        startActivity(intent);
+        startActivityForResult(intent, REQUEST_CODE);
 
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        super.onActivityResult(requestCode,resultCode,data);
+        if(requestCode==REQUEST_CODE){
+            if(resultCode== NewActivity.RESULT_OK){
+               String result = data.getStringExtra("EXTRA_MESSAGE2");
+                Toast.makeText(getApplicationContext(),result,Toast.LENGTH_SHORT).show();
+            }
+           /* if(){
+
+            }*/
+        }
+    }//OnActivityResult
 }

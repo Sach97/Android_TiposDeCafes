@@ -13,6 +13,7 @@
         android:text="Tipo de Cafe?"
         android:textColor="#ffffff"
         android:textStyle="bold"/>
+
     <RadioGroup
         android:id="@+id/radioGroupCoffeType"
         android:layout_width="match_parent"
@@ -55,14 +56,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Crema de Leche"
-        android:textStyle="bold">
-    </CheckBox>
+        android:textStyle="bold"></CheckBox>
 
     <CheckBox
         android:id="@+id/checkAzucar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Crema de Azucar"
+        android:text="Con Azucar"
         android:textStyle="bold">
     </CheckBox>
 
